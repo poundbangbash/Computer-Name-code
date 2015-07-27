@@ -5,11 +5,9 @@ try
 " & cpuName & "
 	
 IP Address: 
-" & ipAddress buttons {"Copy IP to Clipboard", "Copy Name to Clipboard", "OK"} default button 3
-	if button returned of theResult is "Copy Name to Clipboard" then
-		set the clipboard to cpuName
-	else if button returned of theResult is "Copy IP to Clipboard" then
-		set the clipboard to ipAddress
+" & ipAddress buttons {"Copy to Clipboard", "OK"} default button 2
+	if button returned of theResult is "Copy to Clipboard" then
+		set the clipboard to cpuName & " " & ipAddress
 	end if
 	
 end try
